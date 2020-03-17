@@ -35,10 +35,21 @@ public class RecursionPrograms {
     // Given a rod of length n
     // find maximum number of pieces you can make such that length of every piece is
     // in a set{a,b,c}.
-    System.out.println(rodCutting(23, 11, 9, 12));
+    // System.out.println(rodCutting(23, 11, 9, 12));
     // two pieces of size 11 and 12
-    System.out.println(rodCutting(5, 4, 2, 6));
+    // System.out.println(rodCutting(5, 4, 2, 6));
     // -1 as rod is of odd length and all pieces in set are even
+
+    AllSubsetsOfString("ABC", " ", 0);
+  }
+
+  public static void AllSubsetsOfString(String str, String curr, int index) {
+    if (index == str.length()) {
+      System.out.print(curr + " ");
+    } else {
+      AllSubsetsOfString(str, curr, index + 1);
+      AllSubsetsOfString(str, curr + str.charAt(index), index + 1);
+    }
   }
 
   public static int rodCutting(int n, int a, int b, int c) {
@@ -71,7 +82,6 @@ public class RecursionPrograms {
   }
 
   public static int fibonacci(int n) {
-
     if (n == 0) {
       return 0;
     }
