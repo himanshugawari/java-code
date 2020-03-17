@@ -53,6 +53,11 @@ public class RecursionPrograms {
     // System.out.println(SubsetSumProblem(temp, temp.length, sum));
 
     System.out.println(JosephusProblem(5, 3));
+    System.out.println(JosephusStartingAt1IndexProblem(5, 3));
+  }
+
+  public static int JosephusStartingAt1IndexProblem(int n, int k) {
+    return JosephusProblem(n, k) + 1;
   }
 
   public static int JosephusProblem(int n, int k) {
