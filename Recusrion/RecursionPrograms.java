@@ -1,7 +1,5 @@
 package Recusrion;
 
-import java.lang.reflect.Array;
-
 public class RecursionPrograms {
   public static void main(String[] args) {
 
@@ -47,12 +45,21 @@ public class RecursionPrograms {
     // Given set as an array and a sum
     // Find count of subsets of the array
     // Whose sum is equal to given sum
-    int[] temp = new int[] { 10, 20, 15 };
+    // int[] temp = new int[] { 10, 20, 15 };
     // int sum = 25;
-    int sum = 0;
+    // int sum = 0;
     // int[] temp = new int[] { 10, 5, 2, 3, 6 };
     // int sum = 8;
-    System.out.println(SubsetSumProblem(temp, temp.length, sum));
+    // System.out.println(SubsetSumProblem(temp, temp.length, sum));
+
+    System.out.println(JosephusProblem(5, 3));
+  }
+
+  public static int JosephusProblem(int n, int k) {
+    if (n == 1) {
+      return 0;
+    }
+    return (JosephusProblem(n - 1, k) + k) % n;
   }
 
   public static int SubsetSumProblem(int[] arr, int n, int sum) {
