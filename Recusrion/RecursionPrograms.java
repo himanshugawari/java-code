@@ -48,7 +48,8 @@ public class RecursionPrograms {
     // Find count of subsets of the array
     // Whose sum is equal to given sum
     int[] temp = new int[] { 10, 20, 15 };
-    int sum = 25;
+    // int sum = 25;
+    int sum = 0;
     // int[] temp = new int[] { 10, 5, 2, 3, 6 };
     // int sum = 8;
     System.out.println(SubsetSumProblem(temp, temp.length, sum));
