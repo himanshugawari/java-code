@@ -1,5 +1,7 @@
 package Recusrion;
 
+import java.lang.reflect.Array;
+
 public class RecursionPrograms {
   public static void main(String[] args) {
 
@@ -40,7 +42,23 @@ public class RecursionPrograms {
     // System.out.println(rodCutting(5, 4, 2, 6));
     // -1 as rod is of odd length and all pieces in set are even
 
-    AllSubsetsOfString("ABC", " ", 0);
+    // AllSubsetsOfString("ABC", " ", 0);
+
+    // Given set as an array and a sum
+    // Find count of subsets of the array
+    // Whose sum is equal to given sum
+    int[] temp = new int[] { 10, 20, 15 };
+    int sum = 25;
+    // int[] temp = new int[] { 10, 5, 2, 3, 6 };
+    // int sum = 8;
+    System.out.println(SubsetSumProblem(temp, temp.length, sum));
+  }
+
+  public static int SubsetSumProblem(int[] arr, int n, int sum) {
+    if (n == 0) {
+      return (sum == 0) ? 1 : 0;
+    }
+    return SubsetSumProblem(arr, n - 1, sum) + SubsetSumProblem(arr, n - 1, sum - arr[n - 1]);
   }
 
   public static void AllSubsetsOfString(String str, String curr, int index) {
