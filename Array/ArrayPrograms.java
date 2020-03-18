@@ -46,12 +46,28 @@ class ArrayPrograms {
     // }
 
     // Remove Duplicates from sorted array
+    // int[] temp = { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
+    // RemoveDuplicatesFromAnSortedArray(temp, temp.length);
+    // for (int i = 0; i < temp.length; i++) {
+    // System.out.print(temp[i] + " ");
+    // }
+
+    // Left Rotate
     int[] temp = { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
-    RemoveDuplicatesFromAnSortedArray(temp, temp.length);
+    LeftRotate(temp, temp.length);
     for (int i = 0; i < temp.length; i++) {
       System.out.print(temp[i] + " ");
     }
 
+  }
+
+  public static void LeftRotate(int[] arr, int n) {
+    int temp;
+    temp = arr[0];
+    for (int i = 1; i < n; i++) {
+      arr[i - 1] = arr[i];
+    }
+    arr[n - 1] = temp;
   }
 
   public static int RemoveDuplicatesFromAnSortedArray(int[] arr, int n) {
