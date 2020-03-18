@@ -53,12 +53,32 @@ class ArrayPrograms {
     // }
 
     // Left Rotate
+    // int[] temp = { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
+    // LeftRotate(temp, temp.length);
+    // for (int i = 0; i < temp.length; i++) {
+    // System.out.print(temp[i] + " ");
+    // }
+
+    // Left Rotate by D
     int[] temp = { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
-    LeftRotate(temp, temp.length);
+    LeftRotateByD(temp, temp.length, 3);
     for (int i = 0; i < temp.length; i++) {
       System.out.print(temp[i] + " ");
     }
 
+  }
+
+  public static void LeftRotateByD(int[] arr, int n, int d) {
+    int[] temp = new int[d];
+    for (int i = 0; i < d; i++) {
+      temp[i] = arr[i];
+    }
+    for (int i = d; i < n; i++) {
+      arr[i - d] = arr[i];
+    }
+    for (int i = 0; i < d; i++) {
+      arr[n - d + i] = temp[i];
+    }
   }
 
   public static void LeftRotate(int[] arr, int n) {
