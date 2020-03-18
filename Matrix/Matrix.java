@@ -19,8 +19,24 @@ class Matrix {
     // printMatrixInSnakePattern(arr);
 
     // Boundary Traversal
-    int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
-    BoundaryTraversal(arr);
+    // int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
+    // BoundaryTraversal(arr);
+
+    // Transpose
+    int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+    print2dArray(arr);
+    Transpose(arr);
+    print2dArray(arr);
+  }
+
+  public static void Transpose(int[][] arr) {
+    for (int i = 0; i < arr.length; i++) {
+      for (int j = i + 1; j < arr[0].length; j++) {
+        int temp = arr[i][j];
+        arr[i][j] = arr[j][i];
+        arr[j][i] = temp;
+      }
+    }
   }
 
   public static void BoundaryTraversal(int[][] arr) {
