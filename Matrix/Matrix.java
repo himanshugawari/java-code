@@ -23,14 +23,36 @@ class Matrix {
     // BoundaryTraversal(arr);
 
     // Transpose
+    // int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+    // print2dArray(arr);
+    // Transpose(arr);
+    // print2dArray(arr);
+
+    // Rotate by 90 degree counter clock wise
     int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
     print2dArray(arr);
     Transpose(arr);
     print2dArray(arr);
+    // Reverse Individual Columns
+    Rotate90(arr);
+    print2dArray(arr);
+  }
+
+  public static void Rotate90(int[][] arr) {
+    for (int i = 0; i < arr.length; i++) {
+      int l = 0, h = arr.length - 1;
+      while (l < h) {
+        int temp = arr[l][i];
+        arr[l][i] = arr[h][i];
+        arr[h][i] = temp;
+        l++;
+        h--;
+      }
+    }
   }
 
   public static void Transpose(int[][] arr) {
-    for (int i = 0; i < arr.length; i++) {
+    for (int i = 0; i < arr[0].length; i++) {
       for (int j = i + 1; j < arr[0].length; j++) {
         int temp = arr[i][j];
         arr[i][j] = arr[j][i];
