@@ -1,6 +1,6 @@
 package Array;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 class ArrayPrograms {
   public static void main(String[] args) {
@@ -28,6 +28,85 @@ class ArrayPrograms {
     // System.out.print(temp[i] + " ");
     // }
 
+    // Delete
+    // int[] temp = { 3, 8, 12, 5, 6 };
+    // for (int i = 0; i < temp.length; i++) {
+    // System.out.print(temp[i] + " ");
+    // }
+    // System.out.println(Delete(temp, 12));
+    // for (int i = 0; i < temp.length; i++) {
+    // System.out.print(temp[i] + " ");
+    // }
+
+    // Reverse an Array
+    // int[] temp = { 1, 2, 3, 4, 5 };
+    // ReverseAnArray(temp, temp.length);
+    // for (int i = 0; i < temp.length; i++) {
+    // System.out.print(temp[i] + " ");
+    // }
+
+    // Remove Duplicates from sorted array
+    int[] temp = { 1, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
+    RemoveDuplicatesFromAnSortedArray(temp, temp.length);
+    for (int i = 0; i < temp.length; i++) {
+      System.out.print(temp[i] + " ");
+    }
+
+  }
+
+  public static int RemoveDuplicatesFromAnSortedArray(int[] arr, int n) {
+    // method 1
+    // int[] t = new int[n];
+    // t[0] = arr[0];
+    // int res = 1;
+    // for (int i = 1; i < n; i++) {
+    // if (t[res - 1] != arr[i]) {
+    // t[res] = arr[i];
+    // res++;
+    // }
+    // }
+    // for (int i = 0; i < res; i++) {
+    // arr[i] = t[i];
+    // }
+    // return res;
+
+    // method 2
+    int res = 1;
+    for (int i = 1; i < n; i++) {
+      if (arr[res - 1] != arr[i]) {
+        arr[res] = arr[i];
+        res++;
+      }
+    }
+    return res;
+  }
+
+  public static void ReverseAnArray(int[] arr, int n) {
+    int l = 0, h = n - 1;
+    while (l < h) {
+      int temp = arr[l];
+      arr[l] = arr[h];
+      arr[h] = temp;
+      l++;
+      h--;
+    }
+  }
+
+  public static int Delete(int[] arr, int x) {
+    int i;
+    int n = arr.length;
+    for (i = 0; i < n; i++) {
+      if (arr[i] == x) {
+        break;
+      }
+    }
+    if (i == n) {
+      return n;
+    }
+    for (int j = i; j < n - 1; j++) {
+      arr[j] = arr[j + 1];
+    }
+    return n - 1;
   }
 
   public static int Insert(int[] arr, int n, int x, int position) {
