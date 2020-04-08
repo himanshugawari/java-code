@@ -1,5 +1,7 @@
 package String;
 
+import java.util.Arrays;
+
 public class StringProg {
 
   public static void main(String[] args) {
@@ -13,6 +15,17 @@ public class StringProg {
     String s2 = "ekesg";
     System.out.println(anagram(s1, s2));
 
+    int[] fi = new int[256];
+    for (int i : fi) {
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    Arrays.fill(fi, -1);
+    for (int i : fi) {
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println(Integer.MAX_VALUE);
   }
 
   public static boolean anagram(String s1, String s2) {
